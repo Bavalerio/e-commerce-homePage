@@ -3,14 +3,14 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: "AIzaSyDerkk8bqe8kR5V9TjyDOMbtzkh0LL70vw",
-  authDomain: "crw-clothing-5fa21.firebaseapp.com",
-  databaseURL: "https://crw-clothing-5fa21.firebaseio.com",
-  projectId: "crw-clothing-5fa21",
-  storageBucket: "crw-clothing-5fa21.appspot.com",
-  messagingSenderId: "939497052535",
-  appId: "1:939497052535:web:06349d17b716eaf53e6972",
-  measurementId: "G-HX44HFZSLM"
+  apiKey: 'AIzaSyDerkk8bqe8kR5V9TjyDOMbtzkh0LL70vw',
+  authDomain: 'crw-clothing-5fa21.firebaseapp.com',
+  databaseURL: 'https://crw-clothing-5fa21.firebaseio.com',
+  projectId: 'crw-clothing-5fa21',
+  storageBucket: 'crw-clothing-5fa21.appspot.com',
+  messagingSenderId: '939497052535',
+  appId: '1:939497052535:web:06349d17b716eaf53e6972',
+  measurementId: 'G-HX44HFZSLM',
 };
 
 firebase.initializeApp(config);
