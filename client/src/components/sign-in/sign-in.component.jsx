@@ -16,7 +16,7 @@ import {
 } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
-  const [userCredentials, setUserCredentials] = useState({
+  const [userCredentials, setCredentials] = useState({
     email: '',
     password: '',
   });
@@ -31,7 +31,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const handleChange = (event) => {
     const { value, name } = event.target;
 
-    setUserCredentials({ ...userCredentials, [name]: value });
+    setCredentials({ ...userCredentials, [name]: value });
   };
 
   return (
