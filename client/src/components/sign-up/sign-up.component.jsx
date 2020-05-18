@@ -15,6 +15,7 @@ const SignUp = ({ signUpStart }) => {
     password: '',
     confirmPassword: '',
   });
+
   const { displayName, email, password, confirmPassword } = userCredentials;
 
   const handleSubmit = async (event) => {
@@ -33,6 +34,7 @@ const SignUp = ({ signUpStart }) => {
 
     setUserCredentials({ ...userCredentials, [name]: value });
   };
+
   return (
     <SignUpContainer>
       <SignUpTitle>I do not have a account</SignUpTitle>
