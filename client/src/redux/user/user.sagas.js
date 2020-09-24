@@ -8,14 +8,14 @@ import {
   signOutSuccess,
   signOutFailure,
   signUpSuccess,
-  signUpFailure,
+  signUpFailure
 } from './user.actions';
 
 import {
   auth,
   googleProvider,
   createUserProfileDocument,
-  getCurrentUser,
+  getCurrentUser
 } from '../../firebase/firebase.utils';
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
@@ -23,7 +23,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
     const userRef = yield call(
       createUserProfileDocument,
       userAuth,
-      additionalData,
+      additionalData
     );
     const userSnapshot = yield userRef.get();
     yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
@@ -113,6 +113,6 @@ export function* userSagas() {
     call(onCheckUserSession),
     call(onSignOutStart),
     call(onSignUpStart),
-    call(onSignUpSuccess),
+    call(onSignUpSuccess)
   ]);
 }

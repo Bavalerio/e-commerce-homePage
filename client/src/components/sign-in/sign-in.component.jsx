@@ -6,30 +6,30 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import {
   googleSignInStart,
-  emailSignInStart,
+  emailSignInStart
 } from '../../redux/user/user.actions';
 
 import {
   SignInContainer,
   SignInTitle,
-  ButtonsBarContainer,
+  ButtonsBarContainer
 } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const [userCredentials, setCredentials] = useState({
     email: '',
-    password: '',
+    password: ''
   });
 
   const { email, password } = userCredentials;
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     emailSignInStart(email, password);
   };
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     const { value, name } = event.target;
 
     setCredentials({ ...userCredentials, [name]: value });
@@ -42,25 +42,25 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
       <form onSubmit={handleSubmit}>
         <FormInput
-          name="email"
-          type="email"
+          name='email'
+          type='email'
           handleChange={handleChange}
           value={email}
-          label="email"
+          label='email'
           required
         />
         <FormInput
-          name="password"
-          type="password"
+          name='password'
+          type='password'
           value={password}
           handleChange={handleChange}
-          label="password"
+          label='password'
           required
         />
         <ButtonsBarContainer>
-          <CustomButton type="submit"> Sign in </CustomButton>
+          <CustomButton type='submit'> Sign in </CustomButton>
           <CustomButton
-            type="button"
+            type='button'
             onClick={googleSignInStart}
             isGoogleSignIn
           >
@@ -72,10 +72,13 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
   emailSignInStart: (email, password) =>
-    dispatch(emailSignInStart({ email, password })),
+    dispatch(emailSignInStart({ email, password }))
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignIn);
